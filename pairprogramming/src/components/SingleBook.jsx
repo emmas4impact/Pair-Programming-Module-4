@@ -6,6 +6,7 @@ import {
   Col,
   Card,
 } from "react-bootstrap";
+import MyBadge from './MyBadge'
 
 
 let books = {
@@ -33,9 +34,9 @@ class SingleBook extends React.Component {
   render() {
     return (
       <div>
-        <Container>
+        <Container className='fluid'>
        
-          <Row>
+          <Row className='justify-content-center'>
             {this.state.books ? (
               this.state.books.map((book) => {
                 return (
@@ -45,7 +46,7 @@ class SingleBook extends React.Component {
                       <Card.Body>
                         <Card.Title>{book.title}</Card.Title>
                        
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="primary">Buy the book<MyBadge /></Button>
                       </Card.Body>
                     </Card>
                   </Col>

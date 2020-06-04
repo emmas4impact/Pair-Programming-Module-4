@@ -5,7 +5,7 @@ import {Navbar, Nav} from "react-bootstrap";
 class NavBar extends Component{
     render(){
         return(
-            <Navbar bg="light"  expand="lg">
+            <Navbar bg="dark" variant="dark"  expand="lg">
                 <Navbar.Brand href="#home">
                  {this.props.title}
                 </Navbar.Brand>
