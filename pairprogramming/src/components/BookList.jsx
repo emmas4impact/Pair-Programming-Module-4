@@ -6,7 +6,12 @@ import {
     Row,
     Col,
     Card,
+    Dropdown,
+    DropdownButton,
+    InputGroup,
+    FormControl,
   } from "react-bootstrap";
+import SingleBook from './SingleBook';
   
   
   let books = {
@@ -24,12 +29,18 @@ import {
       super(props);
   
       this.state = {
-        books: books.fantasy.slice(0, 1),
+        books: books.fantasy.slice(0,1),
+        categorySelected: this.props.jumboTitle,
         
       };
     }
   
-   
+    handleDropdownChange = (category) => {
+      this.setState({
+        books: books[category].slice(0, 1),
+        categorySelected: category,
+      });
+    };
   
     
   
@@ -37,7 +48,24 @@ import {
       return (
         <div>
           <Container>
-         
+          <DropdownButton
+              as={InputGroup.Prepend}
+              id="dropdown-basic-button"
+              className="mb-3"
+              title={this.state.categorySelected}
+            >
+              {book_list.map((category, index) => {
+                return (
+                  <Dropdown.Item
+                    href="#/action-1"
+                    key={`dropdown-category-${index}`}
+                    onClick={() => this.handleDropdownChange(category)}
+                  >
+                    {category}
+                  </Dropdown.Item>
+                );
+              })}
+            </DropdownButton>
             <Row>
               {this.state.books ? (
                 this.state.books.map((book) => {
