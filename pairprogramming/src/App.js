@@ -5,6 +5,7 @@ import Warnings from './components/WarningSign';
 import { Navbar } from 'react-bootstrap';
 import NavBar from './components/NavBar';
 import MyBadge from './components/MyBadge';
+import SingleBook from './components/SingleBook';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <NavBar title="Strive Books"/>
         <Warnings />
         <MyBadge />
+        <SingleBook />
      
     </div>
   );
