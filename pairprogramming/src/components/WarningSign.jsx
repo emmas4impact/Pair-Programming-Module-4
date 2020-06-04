@@ -9,7 +9,7 @@ class Warnings extends React.Component{
         return(
             <div>Hello
             <Alert variant="danger" className="mt-5">
-                No dish selected
+                No books in the library
             </Alert>
             </div>
             );
