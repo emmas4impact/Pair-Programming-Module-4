@@ -14,7 +14,7 @@ function App() {
      
         <NavBar title="Strive Books"/>
         <Warnings />
-        <MyBadge />
+       
         <SingleBook />
         <BookList />
      

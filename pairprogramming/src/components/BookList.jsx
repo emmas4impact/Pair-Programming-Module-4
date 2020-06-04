@@ -41,6 +41,20 @@ import SingleBook from './SingleBook';
         categorySelected: category,
       });
     };
+    
+    handleSearchQuery = (searchQuery) => {
+      let category = this.state.categorySelected;
+  
+      if (searchQuery) {
+        let filteredBooks = books[category].filter((book) =>
+          book.title.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        this.setState({ books: filteredBooks.slice(0, 12) });
+      } else {
+        this.setState({ books: books[category].slice(0, 12) });
+      }
+    };
+  
   
     
   
@@ -48,7 +62,8 @@ import SingleBook from './SingleBook';
       return (
         <div>
           <Container>
-          <DropdownButton
+          <InputGroup>
+            <DropdownButton
               as={InputGroup.Prepend}
               id="dropdown-basic-button"
               className="mb-3"
@@ -66,6 +81,13 @@ import SingleBook from './SingleBook';
                 );
               })}
             </DropdownButton>
+            <FormControl
+              placeholder="Search Books by Title"
+              aria-label="Search"
+              aria-describedby="basic-addon1"
+              onChange={(e) => this.handleSearchQuery(e.target.value)}
+            />
+          </InputGroup>
             <Row>
               {this.state.books ? (
                 this.state.books.map((book) => {
