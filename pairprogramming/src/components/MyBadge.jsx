@@ -7,9 +7,9 @@ class MyBadge extends React.Component{
     
     render(){
         return(
-            <h4>
-            Books <Badge variant="secondary">New</Badge>
-          </h4>
+            
+             <Badge variant="secondary" className="ml-3">12$</Badge>
+          
             );
             
            }
