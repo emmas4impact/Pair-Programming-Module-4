@@ -4,6 +4,7 @@ import './App.css';
 import Warnings from './components/WarningSign';
 import { Navbar } from 'react-bootstrap';
 import NavBar from './components/NavBar';
+import MyBadge from './components/MyBadge';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
      
         <NavBar title="Strive Books"/>
         <Warnings />
+        <MyBadge />
      
     </div>
   );
