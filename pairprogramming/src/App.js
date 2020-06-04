@@ -6,6 +6,7 @@ import { Navbar } from 'react-bootstrap';
 import NavBar from './components/NavBar';
 import MyBadge from './components/MyBadge';
 import SingleBook from './components/SingleBook';
+import BookList from './components/BookList'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Warnings />
         <MyBadge />
         <SingleBook />
+        <BookList />
      
     </div>
   );
