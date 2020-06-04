@@ -36,9 +36,26 @@ import {
     render() {
       return (
         <div>
-          <Container>
-         
-            <Row>
+          <Container className='justify-content-center' >
+          <DropdownButton
+              as={InputGroup.Prepend}
+              id="dropdown-basic-button"
+              className="mb-3"
+              title={this.state.categorySelected}
+            >
+              {book_list.map((category, index) => {
+                return (
+                  <Dropdown.Item
+                    href="#/action-1"
+                    key={`dropdown-category-${index}`}
+                    onClick={() => this.handleDropdownChange(category)}
+                  >
+                    {category}
+                  </Dropdown.Item>
+                );
+              })}
+            </DropdownButton>
+            <Row className='justify-content-center'>
               {this.state.books ? (
                 this.state.books.map((book) => {
                   return (
